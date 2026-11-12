@@ -130,7 +130,11 @@ fn read_value(&mut self, value_type: u32)-> GgufValue<'a>{
 }}
 }
 fn main() -> Result<(),Box<dyn std::error::Error>>{
-    let file =File::open("../models/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive-Q8_0.gguf")?;
+    // model path: first CLI argument, or models/<default>.gguf inside this repo
+    let path = std::env::args().nth(1).unwrap_or_else(|| {
+        "models/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive-Q8_0.gguf".to_string()
+    });
+    let file =File::open(&path)?;
     let mmap=unsafe {Mmap::map(&file)?};
     let mut reader=ByteReader::new(&mmap);
     //checking if this is a GGUF format or not 

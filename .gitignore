@@ -2,3 +2,5 @@ target/
 project.md
 PROJECT.md
 .DS_Store
+models/
+*.gguf
