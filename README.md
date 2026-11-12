@@ -110,3 +110,7 @@ llama-rust/
 ## Acknowledgements
 
 - [`llama.cpp`](https://github.com/ggml-org/llama.cpp) and the [GGUF format spec](https://github.com/ggml-org/ggml/blob/master/docs/gguf.md) are the reference for everything here.
+
+## License
+
+[MIT](LICENSE)
